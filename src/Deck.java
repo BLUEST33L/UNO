@@ -6,11 +6,22 @@ public class Deck {
     // Attributes
     private Stack<Card> cardStack;
 
+
     // Constructor
     public Deck() {
         reset();
     }
 
+
+    /**
+     * Initializes the deck as if in a new game of Uno.
+     * Removes all card present in the deck.
+     * Adds:    Four colored 0s
+     * Eight colored 1s, 2s, 3s, 4s, 5s, 6s, 7s, 8s, 9s
+     * Eight colored Skips, Reverses, Draw Twos
+     * Four Wilds, Wild Draw Fours
+     * The cards are then shuffled.
+     */
     public void reset() {
         // Create a new stack, empty at start
         cardStack = new Stack<>();
@@ -44,7 +55,12 @@ public class Deck {
 
     }
 
-    public Card giveCard() {
+    /**
+     * Removes the top card from the deck
+     *
+     * @return the removed card
+     */
+    public Card popTopCard() {
         return cardStack.pop();
     }
 
